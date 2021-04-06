@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+	
+	function validate(){
+		var valName = document.forms["formOne"]["name"].value;
+		var valYear = document.forms["formOne"]["year"].value;
+		if(valName == "")
+			{
+				alert("Name is empty");
+				return false;
+			}
+		if(valYear == "")
+			{
+				alert("Year is empty");
+				return false;
+			}
+	}
+</script>
+</head>
+<body>
+	<form name = "formOne" action = "addCarServlet" onsubmit="return validate()" method="post">
+	Name: <input type = "text" name = "name">
+	Year: <input type = "text" name = "year">
+	<input type = "submit" value= "Add Car">
+	</form><br />
+	<a href = "viewAllCarsServlet">View the inventory</a>
+	<a href = "viewAllSoldCarsServlet">View the sold cars</a>
+	
+	
+</body>
+</html>
